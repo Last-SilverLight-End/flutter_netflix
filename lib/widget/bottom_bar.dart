@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 //상태 관리가 필요 없는 위젯이므로 Stateless 이다.

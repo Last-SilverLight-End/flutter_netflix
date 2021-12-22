@@ -1,4 +1,3 @@
-import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:fluuterandfirebase/model/model_movie.dart';
 import 'package:fluuterandfirebase/widget/carousel_slider.dart';
@@ -14,7 +13,25 @@ class _HomeScreenState extends State<HomeScreen> {
       'keyword': '사랑/로맨스/판타지',
       'poster': 'test_movie_1.png',
       'like': false
-    })
+    }),
+    Movie.fromMap({
+      'title': '사람의 불시착',
+      'keyword': '사랑/로맨스/판타지',
+      'poster': 'test_movie_1.png',
+      'like': false
+    }),
+    Movie.fromMap({
+      'title': '사람의 불시착',
+      'keyword': '사랑/로맨스/판타지',
+      'poster': 'test_movie_1.png',
+      'like': false
+    }),
+    Movie.fromMap({
+      'title': '사람의 불시착',
+      'keyword': '사랑/로맨스/판타지',
+      'poster': 'test_movie_1.png',
+      'like': false
+    }),
   ];
 
   @override
@@ -36,7 +53,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
 
 class TopBar extends StatelessWidget {
   @override
