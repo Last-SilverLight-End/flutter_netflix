@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:fluuterandfirebase/model/model_movie.dart';
 class CarouselImage extends StatefulWidget {
@@ -23,7 +24,7 @@ class _CarouselImageState extends State<CarouselImage> {
     super.initState();
 
     movies = widget.movies; 
-    images = movies?.map((e) => Image.asset(e.poster)).toList();
+    images = movies?.map((m) => Image.asset('../images/'+m.poster)).toList();
     keywords = movies?.map((e) => e.keyword).toList();
     likes = movies?.map((e) => e.like).toList();
     _currentKeyword = keywords![0];
@@ -32,6 +33,25 @@ class _CarouselImageState extends State<CarouselImage> {
 
   @override
   Widget build(BuildContext context){
-    return Container();
+    return Container(
+      child: Column(children: <Widget>[
+        Container(
+          padding:  EdgeInsets.all(20),
+        ),
+        CarouselSlider(items: images,
+         options: CarouselOptions(onPageChanged: (index,reason){
+           setState(() {
+             _currenetPage = index;
+             _currentKeyword = keywords![_currenetPage];
+           });
+         },
+         ), 
+        ),
+          Container(
+            child: Text(_currentKeyword!),
+          ),
+        ],
+      ),
+    );
   }
 }
