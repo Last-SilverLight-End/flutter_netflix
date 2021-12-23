@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluuterandfirebase/model/model_movie.dart';
+import 'package:fluuterandfirebase/widget/box_slider.dart';
 import 'package:fluuterandfirebase/widget/carousel_slider.dart';
 import 'package:fluuterandfirebase/widget/circle_slider.dart';
 
@@ -50,7 +51,12 @@ class _HomeScreenState extends State<HomeScreen> {
             TopBar(),
           ],
         ),
-        CircleSlider(movies : movies,),
+        CircleSlider(
+          movies: movies,
+        ),
+        BoxSlider(
+          movies: movies,
+        ),
       ],
     );
   }
