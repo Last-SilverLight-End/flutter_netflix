@@ -32,6 +32,11 @@ class _DetailScreenState extends State<DetailScreen> {
                         fit: BoxFit.cover,
                       ),
                     ),
+                    child: ClipRect(
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                      ),
+                    ),
                   ),
                 ],
               ),
