@@ -1,3 +1,5 @@
+
+ 
 import 'package:flutter/material.dart';
 import 'package:fluuterandfirebase/model/model_movie.dart';
 import 'package:fluuterandfirebase/widget/box_slider.dart';
