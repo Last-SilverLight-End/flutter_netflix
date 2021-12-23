@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:fluuterandfirebase/model/model_movie.dart';
+import 'package:fluuterandfirebase/screen/detail_screen.dart';
+import 'dart:ui';
 
 class CarouselImage extends StatefulWidget {
   final List<Movie>? movies;
@@ -9,6 +11,7 @@ class CarouselImage extends StatefulWidget {
 }
 
 class _CarouselImageState extends State<CarouselImage> {
+  late final Movie movie;
   List<Movie>? movies;
   List<Widget>? images;
   List<String>? keywords;
@@ -25,6 +28,7 @@ class _CarouselImageState extends State<CarouselImage> {
     keywords = movies?.map((e) => e.keyword).toList();
     likes = movies?.map((e) => e.like).toList();
     _currentKeyword = keywords![0];
+    // late final Movie movie;
   }
 
   @override
@@ -97,8 +101,19 @@ class _CarouselImageState extends State<CarouselImage> {
                   child: Column(
                     children: <Widget>[
                       IconButton(
-                        onPressed: () {},
                         icon: Icon(Icons.info),
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute<Null>(
+                              fullscreenDialog: true,
+                              builder: (BuildContext context) {
+                                return DetailScreen(
+                                  movie: movies![_currentPage],
+                                );
+                              },
+                            ),
+                          );
+                        },
                       ),
                       Text(
                         '정보',
