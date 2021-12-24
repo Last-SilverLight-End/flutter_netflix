@@ -46,7 +46,52 @@ class _DetailScreenState extends State<DetailScreen> {
                                   child: Image.asset(
                                     '../images/' + widget.movie!.poster),
                                     height:  300,
+                                ),
+                                Container(padding: EdgeInsets.all(7),
+                                child: Text(
+                                  '99% 일치? 2021 15+ 시즌 1개',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 13),
+                                  ),
+                                ),
+                                Container(
+                                  padding: EdgeInsets.all(7),
+                                  child: Text(
+                                    widget.movie!.title,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(fontWeight: FontWeight.bold,
+                                    fontSize: 16),
+                                  ),
+                                ),
+                                Container(
+                                  padding: EdgeInsets.all(3),
+                                  child: FlatButton(
+                                    onPressed: () {},
+                                    color: Colors.red,
+                                    child: Row(
+                                      mainAxisAlignment: 
+                                          MainAxisAlignment.center,
+                                      children: <Widget>[
+                                      Icon(Icons.play_arrow),
+                                      Text('재생'),
 
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  padding: EdgeInsets.all(5), 
+                                  child: Text(widget.movie.toString()),
+                                ),
+                                Container(
+                                  padding: EdgeInsets.all(5),
+                                  child: Text(
+                                    '출연 : 현빈 , 손예진, 서지혜',
+                                    style:  TextStyle(
+                                      color: Colors.white60,
+                                      fontSize: 12
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),
@@ -55,6 +100,8 @@ class _DetailScreenState extends State<DetailScreen> {
                       ),
                     ),
                   ),
+                  Positioned(child: AppBar(backgroundColor: Colors.transparent,
+                  elevation: 0,),),
                 ],
               ),
               makeMenuButton(),
